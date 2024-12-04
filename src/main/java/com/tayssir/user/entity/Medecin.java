@@ -34,8 +34,8 @@ public class Medecin extends User {
 		this.numCin = numCin;
 	}
 	public Medecin(String nom, String prenom, String tel, String adresse, LocalDate dateDeNaissance, String email,
-			String password, String code, Image diplome, int numCin) {
-		super(nom, prenom, tel, adresse, dateDeNaissance, email, password);
+			String password, String code, Image diplome, int numCin,Double prix) {
+		super(nom, prenom, tel, adresse, dateDeNaissance, email, password,prix);
 		this.code = code;
 		this.diplome = diplome;
 		this.numCin = numCin;
@@ -45,8 +45,8 @@ public class Medecin extends User {
 		
 	}
 	public Medecin(String nom, String prenom, String tel, String adresse, LocalDate dateDeNaissance, String email,
-			String password) {
-		super(nom, prenom, tel, adresse, dateDeNaissance, email, password);
+			String password,Double prix) {
+		super(nom, prenom, tel, adresse, dateDeNaissance, email, password,prix);
 		
 	}
     

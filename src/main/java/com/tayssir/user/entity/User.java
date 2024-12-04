@@ -1,7 +1,9 @@
 package com.tayssir.user.entity;
 
 import java.time.LocalDate;
+import java.util.List;
 
+import jakarta.persistence.CascadeType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -9,6 +11,7 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
+import jakarta.persistence.OneToMany;
 import jakarta.persistence.Inheritance;
 
 @Entity
@@ -29,10 +32,14 @@ public class User {
     private String email;
 
     private String password;
+    private Double prix ;
 
     @Column(nullable = false)
     private boolean active = false;
 
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<Payment> payments;
+    
 	public boolean isActive() {
 		return active;
 	}
@@ -115,7 +122,7 @@ public class User {
 	}
 
 	public User(String nom, String prenom, String tel, String adresse, LocalDate dateDeNaissance, String email,
-			String password) {
+			String password,Double prix) {
 		super();
 		this.nom = nom;
 		this.prenom = prenom;
@@ -124,11 +131,28 @@ public class User {
 		this.dateDeNaissance = dateDeNaissance;
 		this.email = email;
 		this.password = password;
+		this.prix = prix;
 	}
 
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
+	}
+
+	public Double getPrix() {
+		return prix;
+	}
+
+	public void setPrix(Double prix) {
+		this.prix = prix;
+	}
+
+	public List<Payment> getPayments() {
+		return payments;
+	}
+
+	public void setPayments(List<Payment> payments) {
+		this.payments = payments;
 	}
 
    

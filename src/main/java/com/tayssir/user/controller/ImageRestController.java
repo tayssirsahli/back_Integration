@@ -15,7 +15,6 @@ import java.io.IOException;
 @RestController
 @RequestMapping("/api/image")
 @CrossOrigin(origins = "*")
-
 public class ImageRestController {
 	@Autowired
 	ImageService imageService;

@@ -19,8 +19,8 @@ public class Laveur extends User {
 	}
 
 	public Laveur(String nom, String prenom, String tel, String adresse, LocalDate dateDeNaissance, String email,
-			String password, String genre) {
-		super(nom, prenom, tel, adresse, dateDeNaissance, email, password);
+			String password, String genre,Double prix) {
+		super(nom, prenom, tel, adresse, dateDeNaissance, email, password,prix);
 		this.genre = genre;
 	}
 
@@ -30,8 +30,8 @@ public class Laveur extends User {
 	}
 
 	public Laveur(String nom, String prenom, String tel, String adresse, LocalDate dateDeNaissance, String email,
-			String password) {
-		super(nom, prenom, tel, adresse, dateDeNaissance, email, password);
+			String password,Double prix) {
+		super(nom, prenom, tel, adresse, dateDeNaissance, email, password,prix);
 		// TODO Auto-generated constructor stub
 	}
     
